@@ -41,7 +41,7 @@
 
 ## :dart: About ##
 
-Describe your project
+Prueba técnica de creación de un script para realizar un test con Selenim
 
 ## :sparkles: Features ##
 

@@ -41,8 +41,7 @@
 
 ## :dart: About ##
 
-Describe your project
-
+Prueba técnica de creación de un script para acceder a una API y tratar sus datos.
 ## :sparkles: Features ##
 
 :heavy_check_mark: Realizar un test en Python o Java que compruebe la respuesta del API siguiente (al menos de los 5 primeros elementos, recorrer los datos para ver si el
