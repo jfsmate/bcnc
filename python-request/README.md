@@ -119,7 +119,7 @@ $ python3 ./index.py
 **Then** examino los datos recibidos
 **And** debería recibir una respuesta exitosa con los datos esperados
 
-## Se pueden realizar más escenario si se conocen los códigos de error o demás códigos de respuesta de la API.
+> :warning: Se pueden realizar más escenario si se conocen los códigos de error o demás códigos de respuesta de la API.
 
 
 ## :memo: License ##
