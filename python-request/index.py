@@ -1,6 +1,8 @@
 import requests
 import unittest
 
+step2 = False
+
 class TestJsonPlaceholderAPI(unittest.TestCase):
     def setUp(self):
 
@@ -56,62 +58,63 @@ class TestJsonPlaceholderAPI(unittest.TestCase):
             expected_title = f"{self.albums[i]['title']}"
             self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
 
-    # Point 2
-    def get_access_token_client_credentials(self):
+    if step2:
+        #Point 2
+        def get_access_token_client_credentials(self):
 
-        token_data = {
-            "grant_type": "client_credentials",
-            "client_id": self.client_id,
-            "client_secret": self.client_secret
-        }
-        response = requests.post(self.client_credentials_token_url, data=token_data)
-        return response.json().get("access_token")
+            token_data = {
+                "grant_type": "client_credentials",
+                "client_id": self.client_id,
+                "client_secret": self.client_secret
+            }
+            response = requests.post(self.client_credentials_token_url, data=token_data)
+            return response.json().get("access_token")
 
-    def get_access_token_authorization_code(self):
-       
-        token_data = {
-            "grant_type": "authorization_code",
-            "client_id": self.authorization_code_client_id,
-            "client_secret": self.authorization_code_client_secret,
-            "redirect_uri": self.authorization_code_redirect_uri,
-            "code": self.authorization_code_code
-        }
-        response = requests.post(self.authorization_code_token_url, data=token_data)
-        return response.json().get("access_token")
-
-    def test_albums_client_credentials(self):
+        def get_access_token_authorization_code(self):
         
-        access_token = self.get_access_token_client_credentials()
+            token_data = {
+                "grant_type": "authorization_code",
+                "client_id": self.authorization_code_client_id,
+                "client_secret": self.authorization_code_client_secret,
+                "redirect_uri": self.authorization_code_redirect_uri,
+                "code": self.authorization_code_code
+            }
+            response = requests.post(self.authorization_code_token_url, data=token_data)
+            return response.json().get("access_token")
 
-        headers = {"Authorization": f"Bearer {access_token}"}
-        response = requests.get(self.api_url, headers=headers)
+        def test_albums_client_credentials(self):
+            
+            access_token = self.get_access_token_client_credentials()
 
-        self.assertEqual(response.status_code, 200, "API request fails with client credentials granted")
+            headers = {"Authorization": f"Bearer {access_token}"}
+            response = requests.get(self.api_url, headers=headers)
 
-        data = response.json()
+            self.assertEqual(response.status_code, 200, "API request fails with client credentials granted")
 
-        self.assertTrue(len(data) > 0, "No API data fetched")
+            data = response.json()
 
-        for i in range(min(5, len(data))):
-            expected_title = f"{self.albums[i]['title']}"
-            self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
+            self.assertTrue(len(data) > 0, "No API data fetched")
 
-    def test_albums_data_authorization_code(self):
+            for i in range(min(5, len(data))):
+                expected_title = f"{self.albums[i]['title']}"
+                self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
 
-        access_token = self.get_access_token_authorization_code()
+        def test_albums_data_authorization_code(self):
 
-        headers = {"Authorization": f"Bearer {access_token}"}
-        response = requests.get(self.api_url, headers=headers)
+            access_token = self.get_access_token_authorization_code()
 
-        self.assertEqual(response.status_code, 200, "API request failed with authorization grant")
+            headers = {"Authorization": f"Bearer {access_token}"}
+            response = requests.get(self.api_url, headers=headers)
 
-        data = response.json()
+            self.assertEqual(response.status_code, 200, "API request failed with authorization grant")
 
-        self.assertTrue(len(data) > 0, "No API data fetched")
+            data = response.json()
 
-        for i in range(min(5, len(data))):
-            expected_title = f"{self.albums[i]['title']}"
-            self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
+            self.assertTrue(len(data) > 0, "No API data fetched")
+
+            for i in range(min(5, len(data))):
+                expected_title = f"{self.albums[i]['title']}"
+                self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
 
 if __name__ == "__main__":
     unittest.main()

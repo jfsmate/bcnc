@@ -72,10 +72,55 @@ $ git clone https://github.com/jfsmate/python-java
 # Install request
 $ pip -m install request
 
-# Run the project
-$ python3 ./index.py
+# Run the project without OAuth2.0
+$ python3 ./index.py 
+
+# For step 2 to work, all authentication variables must be configured and check step2 = True
 
 ```
+
+# Ejemplo de Uso con BDD (given-when-then)
+
+## Escenario 1: Verificar Respuesta del API sin seguridad
+
+**Given** que tengo acceso al API `https://jsonplaceholder.typicode.com/albums`  
+**When** realizo una solicitud GET al API  
+**Then** debería recibir una respuesta exitosa (código 200)  
+
+## Escenario 2: Verificar Datos de los Primeros 5 Elementos
+
+**Given** que he realizado una solicitud al API  
+**When** examino los datos recibidos  
+**Then** debería encontrar información sobre al menos 5 álbumes
+
+## Escenario 3: Verificar Coincidencia con Texto Esperado
+
+**Given** que tengo los datos de los primeros 5 álbumes  
+**When** reviso los títulos de los álbumes  
+**Then** cada título debería coincidir con el formato esperado
+
+## Escenario 4: Obtener Token con Client Credentials
+
+**Given** que tengo acceso al API `https://jsonplaceholder.typicode.com/albums`   
+**When** realizo una solicitud para obtener un token de acceso usando el flujo de concesión de credenciales del cliente  
+**Then** debería recibir un token de acceso válido
+
+## Escenario 5: Obtener Token con Access Token
+
+**Given** que tengo acceso al API `https://jsonplaceholder.typicode.com/albums`   
+**When** realizo una solicitud de autorización y obtengo un código de autorización  
+**Then** utilizo ese código para obtener un token de acceso usando el flujo de concesión de autorización  
+**And** debería recibir un token de acceso válido
+
+## Escenario 6: Hacer Llamada a la API Protegida con Access Token
+
+**Given** que tengo un token de acceso válido  
+**When** realizo una solicitud a la API protegida  
+**Then** examino los datos recibidos
+**And** debería recibir una respuesta exitosa con los datos esperados
+
+## Se pueden realizar más escenario si se conocen los códigos de error o demás códigos de respuesta de la API.
+
 
 ## :memo: License ##
 
