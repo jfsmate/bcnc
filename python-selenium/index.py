@@ -21,7 +21,7 @@ def extract_paragraphs(section):
         for div_text in divs_text:
             paragraphs = div_text.find_elements(By.TAG_NAME, "p")
             for paragraph in paragraphs:
-                print(f"Section: {section}\nParagraph text: {paragraph.text}\n")
+                print(f"Section: {section}\nText paragraph: {paragraph.text}\n")
     
     except Exception as e:
         print(f"Error in {section}: {str(e)}")
