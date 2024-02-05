@@ -44,10 +44,10 @@
 Prueba técnica de creación de un script para acceder a una API y tratar sus datos.
 ## :sparkles: Features ##
 
-:heavy_check_mark: Realizar un test en Python o Java que compruebe la respuesta del API siguiente (al menos de los 5 primeros elementos, recorrer los datos para ver si el texto coincide con lo esperado.): https://jsonplaceholder.typicode.com/albums.;
+:heavy_check_mark: Realizar un test en Python o Java que compruebe la respuesta del API siguiente (al menos de los 5 primeros elementos, recorrer los datos para ver si el texto coincide con lo esperado.): https://jsonplaceholder.typicode.com/albums.;\
 :heavy_check_mark: Agregar a los tests el “flujo necesario” para los supuestos casos de que el API tuviese autenticación con:
 - [Realizar esas llamadas incluyendo el grant_type client credentials de OAuth 2.0].
-- [Realizar esas llamadas incluyendo el grant_type authorization code de OAuth 2.0].;
+- [Realizar esas llamadas incluyendo el grant_type authorization code de OAuth 2.0].;\
 :heavy_check_mark: Agregar en el README “BDD given-when-then” para el ejercicio;
 
 ## :rocket: Technologies ##
