@@ -24,7 +24,7 @@ def extract_paragraphs(section):
                 print(f"Section: {section}\nParagraph text: {paragraph.text}\n")
     
     except Exception as e:
-        print(f"Error in {seccion}: {str(e)}")
+        print(f"Error in {section}: {str(e)}")
 
 for section in sections:
     extract_paragraphs(section)
