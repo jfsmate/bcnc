@@ -6,23 +6,23 @@
   <!-- <a href="https://pythonjava.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Python API requests</h1>
+<h1 align="center">Python Selenium</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/python-java?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/jfsmate/python-selenium?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/python-java?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/jfsmate/python-selenium?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/python-java?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jfsmate/python-selenium?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/python-java?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/jfsmate/python-selenium?color=56BEB8">
 
 </p>
 
 <!-- Status -->
 
 <!-- <h4 align="center"> 
-	🚧  Python API request 🚀 Under construction...  🚧
+	🚧  Python Selenium 🚀 Under construction...  🚧
 </h4> 
 
 <hr> -->
@@ -45,20 +45,15 @@ Describe your project
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Realizar un test en Python o Java que compruebe la respuesta del API siguiente (al menos de los 5 primeros elementos, recorrer los datos para ver si el
-texto coincide con lo esperado.): https://jsonplaceholder.typicode.com/albums;\
-:heavy_check_mark: Agregar a los tests el “flujo necesario” para los supuestos casos de que el API tuviese autenticación con:
-- [Realizar esas llamadas incluyendo el grant_type client credentials de OAuth 2.0]
-- [Realizar esas llamadas incluyendo el grant_type authorization code de OAuth 2.0]
-;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Realizar con Python y Selenium unos tests que recorran las secciones del menú “HOME” y “WHO WE ARE”, para extraer el valor de los párrafos que estén dentro de los divs con la clase “text”.;\
+:heavy_check_mark: Esas secciones se encuentran en la web https://bcncgroup.com/;\
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
 - [Python3](https://www.python.org/)
-- [request]
+- [Selenium]
 
 ## :white_check_mark: Requirements ##
 
@@ -68,10 +63,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 ```bash
 # Clone this project
-$ git clone https://github.com/jfsmate/python-java
+$ git clone https://github.com/jfsmate/python-selenium
 
-# Install request
-$ pip -m install request
+# Install Selenium
+$ pip install selenium
 
 # Run the project
 $ python3 ./index.py
