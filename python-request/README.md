@@ -58,29 +58,51 @@ Prueba técnica de creación de un script para acceder a una API y tratar sus da
 The following tools were used in this project:
 
 - [Python3](https://www.python.org/)
-- request Python3 Library
+- requests Python3 Library
+- pytest
+- pytest-html
+- behave
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Python3](https://www.python.org/downloads/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Python3](https://www.python.org/downloads/), [Dockers](https://www.docker.com/) installed.
 
 ## :checkered_flag: Starting ##
 
+## Project structure
+
+- Dockerfile file, which helps us build our docker.
+- requirements.text, helps us define the technologies and libraries we need.
+- api/, módulo de llamada a la API.
+- config/, archivos de configuración necesarios.
+- tests/, script de ejección de los tests.
+
+Example report:
+- assets/ CSS para el reporte
+- report.html
+
+The system is dockerized.
+
+## Step 1
+Construimos nuestra imagen.
+
 ```bash
-# Clone this project
-$ git clone https://github.com/jfsmate/python-java
-
-# Install request
-$ pip -m install request
-
-# Run the project without OAuth2.0
-$ python3 ./index.py 
-
-# For step 2 to work, all authentication variables must be configured and check step2 = True
+$ docker build --no-cache -t python-requests .
 
 ```
 
-# Ejemplo de Uso con BDD (given-when-then)
+## Step 2
+We run and raise our container within our private network.
+```bash
+docker run --rm python-requests
+```
+
+# Next steps
+- Export the generated report to be able to view it locally in a browser.
+- Include .gitignore file so we can upload unnecessary files to the repository
+- Include docker compose execution.
+
+# Ejemplo de Uso BDD (given-when-then)
 
 ## Escenario 1: Verificar Respuesta del API sin seguridad
 

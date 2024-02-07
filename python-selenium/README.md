@@ -107,6 +107,7 @@ docker run --rm --network mi_network selenium_tests
 # Next steps
 - Export the generated report to be able to view it locally in a browser.
 - Include .gitignore file so we can upload unnecessary files to the repository
+- Include docker compose execution.
 
 
 # Ejemplo de Uso BDD (given-when-then)
