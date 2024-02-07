@@ -33,24 +33,4 @@ def check_pharagraphs(driver, section):
                 print(f"Section: {section}\nText paragraph: {paragraph.text}\n")
 
     except Exception as e:
-        print(f"Error in HOME: {str(e)}")
-
-# def test_who_we_are_page(driver):
-#     who_we_are_page = WhoWeArePage(driver)
-#     who_we_are_page.go()
-#     assert "BCNC" in who_we_are_page.get_title()
-#     try:
-#         time.sleep(10)
-        
-#         driver.find_element(By.LINK_TEXT, "WHO WE ARE").click()
-        
-#         driver.implicitly_wait(5)
-        
-#         divs_text = driver.find_elements(By.CSS_SELECTOR, "div.text")
-#         for div_text in divs_text:
-#             paragraphs = div_text.find_elements(By.TAG_NAME, "p")
-#             for paragraph in paragraphs:
-#                 print(f"Section: WHO WE ARE\nText paragraph: {paragraph.text}\n")
-    
-#     except Exception as e:
-#         print(f"Error in WHO WE ARE: {str(e)}")
+        print(f"Error in {section}: {str(e)}")
