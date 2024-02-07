@@ -83,6 +83,14 @@ Example report:
 The system is dockerized.
 
 ## Step 1
+Download de repository.
+```bash
+$ git clone https://github.com/jfsmate/bcnc.git
+
+```
+and access the python-request/ folder.
+
+## Step 2
 We build our docker to build the image.
 
 ```bash
@@ -90,7 +98,7 @@ $ docker build --no-cache -t python-requests .
 
 ```
 
-## Step 2
+## Step 3
 We run and raise our container within our private network.
 ```bash
 docker run --rm python-requests
