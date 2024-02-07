@@ -31,7 +31,8 @@ Se definen los objetivos de la prueba. En nuestro caso tenemos el siguiente requ
 **Objetivo 1**
 - Realizar con Python y Selenium unos tests que recorran las secciones del menú “HOME” y “WHO WE ARE”, para extraer el valor de los párrafos que estén dentro de los divs con la clase “text”.
 - Esas secciones se encuentran en la web https://bcncgroup.com/
-Criterios de entrada:
+  
+_Criterios de entrada:_
 - Se necesita tener acceso a la web https://bcncgroup.com/.
 - En el menú deben aparecer los items “HOME” y “WHO WE ARE”.
 
@@ -43,10 +44,10 @@ Criterios de entrada:
 
 - Agregar en el README “BDD given-when-then” para el ejercicio
 
-**Criterios de entrada:**
+_Criterios de entrada:_
 - Se necesita tener acceso a la API https://jsonplaceholder.typicode.com/albums.
 
-Objetivos comunes
+**Objetivos comunes**
 - Integrar alguna librería que reporte el informe de todos los tests.
 - Dockerizarlo todo.
 - Presentar en el readme un plan/estrategia de testing, explicando las metodologías.
