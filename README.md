@@ -105,12 +105,13 @@ Entonces el usuario debería recibir una respuesta exitosa (código 200)
 ```
 
 ### Implementación de la Prueba
-Se construye el entorno de prueba, con todas las herramientas y tecnologías definidas.
+- Construcción del entorno de prueba, con todas las herramientas y tecnologías definidas.
+- Implementación de casos de prueba a través de las historias definidas.
   
 ### Ejecución de la Prueba
-- Se ejecutan los script de prueba y se comprueba su funcionamiento.
-- Se comprueban los reportes generados
-- Se dockeriza cada script.
+- Ejecutamos los script de prueba y se comprueba su funcionamiento.
+- Compruebación los reportes generados.
+- Dockerización de cada script.
 - Se identifican varias funcionalidades pendientes por desarrollar para conseguir un estádo óptimo de la prueba.
 - Todo queda documentado en el archivo README.md de cada proyecto.
 
@@ -153,7 +154,7 @@ Objetivo 2
 Debido al poco tiempo para realizar la prueba se han detectado riesgos de producto:
 - Funcionalidad incorrecta
 		En un primer momento se intentó crear un docker con toda la funcionalidad a través de la instalación de python, chrome y chromedriver.
-		Se observó que las mayores versiónes que se podían instalar de ambos no eran compatibles.
+		Se observó que las mayores versiónes que se podían instalar de ambos, no eran compatibles.
 - Asociados a la organización
 		El probador ha tenido que invertir tiempo en actualizac conocimientos, debido a que se han utilizado tecnologías con las que no		
 		ha trabajado con anterioridad.
