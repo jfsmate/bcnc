@@ -77,6 +77,7 @@ The system is dockerized and uses 2 images to mount the test automation framewor
 - selenium/standalone-chrome (image containing selenium, chromedriver and chrome)
 - selenium_test (image with the automation framework)
 
+This option has been chosen due to the incompatibility of ChromeDriver and Chrome versions.
 
 ## Step 1
 Download de repository.
@@ -84,7 +85,7 @@ Download de repository.
 $ git clone https://github.com/jfsmate/bcnc.git
 
 ```
-and access the python-selenium folder.
+and access the python-selenium/ folder.
 
 ## Step 2
 We download the image from selenium/standalon-chrome
