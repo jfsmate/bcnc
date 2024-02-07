@@ -41,7 +41,7 @@
 
 ## :dart: About ##
 
-Prueba técnica de creación de un script para realizar un test con Selenim
+Prueba técnica de creación de un script de automatización de pruebas para la web de BCNC GROUP.
 
 ## :sparkles: Features ##
 
@@ -53,27 +53,63 @@ Prueba técnica de creación de un script para realizar un test con Selenim
 The following tools were used in this project:
 
 - [Python3](https://www.python.org/)
-- [Selenium]
+- selenium
+- pytest
+- pytest-html
+- behave
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Python3](https://www.python.org/downloads/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Python3](https://www.python.org/downloads/), [Dockers](https://www.docker.com/) installed.
 
 ## :checkered_flag: Starting ##
 
+# Project structure
+
+- Dockerfile file, which helps us build our docker.
+- requirements.text, helps us define the technologies and libraries we need.
+- pages/, contains the page files that structure the project.
+- test/, contains the features and steps of the testing framework.
+- conftest.py, module to connect with the selenium docker
+
+The system is dockerized and uses 2 images to mount the test automation framework.
+
+- selenium/standalone-chrome (image containing selenium, chromedriver and chrome)
+- selenium_test (image with the automation framework)
+
+# Step 1
+We download the image from selenium/standalon-chrome
+
 ```bash
-# Clone this project
-$ git clone https://github.com/jfsmate/python-selenium
-
-# Install Selenium
-$ pip install selenium
-
-# Run the project
-$ python3 ./index.py
+$ docker pull selenium/standalone-chrome
 
 ```
 
-# Ejemplo de Uso con BDD (given-when-then)
+# Step 2
+We are launching the selenium service, but with a particular twist, within a private network where the two dockers can communicate.
+```bash
+$ docker run -d --network mi_network -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
+```
+
+# Step 3
+We build our docker to build the image.
+```bash
+$ docker build --no-cache -t selenium_tests .
+```
+
+# Step 4
+We run and raise our container within our private network.
+```bash
+docker run --rm --network mi_network selenium_tests
+```
+
+
+# Next steps
+- Export the generated report to be able to view it locally in a browser.
+- Include .gitignore file so we can upload unnecessary files to the repository
+
+
+# Ejemplo de Uso BDD (given-when-then)
 
 ## Escenario 1: Extracción el contenido de los párrafos con la clase "text" de la sección "HOME"
 
