@@ -64,7 +64,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 ## :checkered_flag: Starting ##
 
-# Project structure
+## Project structure
 
 - Dockerfile file, which helps us build our docker.
 - requirements.text, helps us define the technologies and libraries we need.
@@ -77,7 +77,7 @@ The system is dockerized and uses 2 images to mount the test automation framewor
 - selenium/standalone-chrome (image containing selenium, chromedriver and chrome)
 - selenium_test (image with the automation framework)
 
-# Step 1
+## Step 1
 We download the image from selenium/standalon-chrome
 
 ```bash
@@ -85,19 +85,19 @@ $ docker pull selenium/standalone-chrome
 
 ```
 
-# Step 2
+## Step 2
 We are launching the selenium service, but with a particular twist, within a private network where the two dockers can communicate.
 ```bash
 $ docker run -d --network mi_network -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
 ```
 
-# Step 3
+## Step 3
 We build our docker to build the image.
 ```bash
 $ docker build --no-cache -t selenium_tests .
 ```
 
-# Step 4
+## Step 4
 We run and raise our container within our private network.
 ```bash
 docker run --rm --network mi_network selenium_tests
