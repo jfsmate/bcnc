@@ -73,9 +73,9 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 - Dockerfile file, which helps us build our docker.
 - requirements.text, helps us define the technologies and libraries we need.
-- api/, módulo de llamada a la API.
-- config/, archivos de configuración necesarios.
-- tests/, script de ejección de los tests.
+- api/, API call module.
+- config/, necessary configuration files.
+- tests/, test execution script.
 
 Example report:
 - assets/ CSS para el reporte
@@ -84,7 +84,7 @@ Example report:
 The system is dockerized.
 
 ## Step 1
-Construimos nuestra imagen.
+We build our docker to build the image.
 
 ```bash
 $ docker build --no-cache -t python-requests .
