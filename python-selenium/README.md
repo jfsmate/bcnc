@@ -78,13 +78,13 @@ $ python3 ./index.py
 ## Escenario 1: Extracción el contenido de los párrafos con la clase "text" de la sección "HOME"
 
 **Given** el usuario acce a la página principal `https://bcncgroup.com/`  
-**When** cuando el usuario hace clic en el enlace del menú "HOME"  
+**When** el usuario hace clic en el enlace del menú "HOME"  
 **Then** se espera que se extraiga el contenido de los párrafos dentro de los divs con la clase "text" en la sección "HOME". 
 
 ## Escenario 2: Extracción el contenido de los párrafos con la clase "text" de la sección "WHO WE ARE"
 
-**Given** el usuario acce a la página principal `https://bcncgroup.com/`  
-**When** cuando el usuario hace clic en el enlace del menú "HOME"  
+**Given** el usuario acce a la página principal `https://bcncgroup.com/who-we-are`  
+**When** el usuario hace clic en el enlace del menú "HOME"  
 **Then** se espera que se extraiga el contenido de los párrafos dentro de los divs con la clase "text" en la sección "WHO WE ARE".
 
 ## :memo: License ##
