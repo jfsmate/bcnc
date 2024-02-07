@@ -64,7 +64,7 @@ Objeto 1
 - Inpeccionamos el código y vemos los elementos con clase "text".
 
 Objeto 2
-- Comprobamos que tenemos acceso a la API requerida
+- Comprobamos que tenemos acceso a la API requerida https://jsonplaceholder.typicode.com/albums.
 - Observamos la respuesta y examinamos los datos.
 
 ### Diseño de la prueba
