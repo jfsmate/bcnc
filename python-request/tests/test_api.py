@@ -2,6 +2,8 @@ import requests
 import unittest
 import json
 from api.api import get_albums
+import logging
+import subprocess
 
 step2 = False
 
@@ -25,16 +27,19 @@ class TestJsonPlaceholderAPI(unittest.TestCase):
         
     # Point 1
     def test_albums_data(self):
+        logging.getLogger('foo').info('first message')
 
+        logging.info("Inicio de la prueba.")
         data = get_albums()
-                
 
+        logging.info("Paso 1: Realizando alguna acción...")
         self.assertTrue(data != False, "No API data fetched")
 
         for i in range(min(5, len(data))):
             expected_title = f"{self.albums[i]['title']}"
             self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
 
+        pass
     
     #Point 2
     @unittest.skip("Se salta este text por las faltas de credenciales")
@@ -98,4 +103,5 @@ class TestJsonPlaceholderAPI(unittest.TestCase):
             self.assertEqual(data[i]["title"], expected_title, f"Element error {i + 1}")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(exit=False)
+    

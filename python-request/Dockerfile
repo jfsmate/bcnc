@@ -10,9 +10,9 @@ ENV PYTHONPATH=/app
 
 # Establecer el directorio de trabajo
 WORKDIR /app
-
+RUN chmod -R 777 /app
 # Copiar los archivos del proyecto al contenedor
 COPY . .
 
 # Comando por defecto para ejecutar el script de Python
-CMD ["pytest", "--html=report.html"]
+CMD ["pytest", "--html=reports/report.html"]

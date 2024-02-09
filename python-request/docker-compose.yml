@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  test:
+    image: python-request
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/juan/reports/:/reports           
+    command: pytest --html=/reports/report.html
+    tty: true
+    stdin_open: true
